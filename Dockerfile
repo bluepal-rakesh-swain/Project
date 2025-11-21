@@ -1,5 +1,5 @@
 # Use an official OpenJDK runtime as a parent image
-FROM openjdk:17
+FROM eclipse-temurin:17-jdk
 
 
 # Copy the JAR file into the container
