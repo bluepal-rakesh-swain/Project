@@ -1,12 +1,14 @@
-# Use an official OpenJDK runtime as a parent image
+# Use an official Java 17 image
 FROM eclipse-temurin:17-jdk
 
-
-# Copy the JAR file into the container
-COPY target/Learning_management_systemm.jar user/app/
-
-# Expose the port your Spring Boot app runs on (default 8080)
+# Set working directory inside the container
 WORKDIR /user/app
 
-# Run the JAR file
-ENTRYPOINT ["java", "-jar", "Employee_Management_Systemm.jar"]
+# Copy your JAR file into the container
+COPY target/Learning_management_systemm.jar app.jar
+
+# Expose the Spring Boot default port
+EXPOSE 8080
+
+# Run the application
+ENTRYPOINT ["java", "-jar", "app.jar"]
