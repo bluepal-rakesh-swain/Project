@@ -2,13 +2,13 @@
 FROM eclipse-temurin:17-jdk
 
 # Set working directory inside the container
-WORKDIR /user/app
+WORKDIR /app
 
-# Copy your JAR file into the container
-COPY target/Learning_management_systemm.jar app.jar
+# Copy the JAR file into the container
+COPY target/EmployeeManagementSystem.jar app.jar
 
-# Expose the Spring Boot default port
+# Expose Spring Boot default port
 EXPOSE 8080
 
 # Run the application
-ENTRYPOINT ["java", "-jar", "EmployeeManagementSystem.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
